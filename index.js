@@ -11,7 +11,7 @@ const authenticate = function (username, password) {
       url: `${config.url}/login`,
       body: { username, password },
       json: true
-    };
+    }
 
     request(options, function (error, response, body) {
       if (error) return reject(error)
@@ -22,7 +22,7 @@ const authenticate = function (username, password) {
 }
 
 const getTheMessage = function (auth) {
-  return new Promise((resolve, reject)=> {
+  return new Promise((resolve, reject) => {
     let options = {
       method: 'GET',
       url: `${config.url}/api/v1/message/send/hello`,
@@ -35,7 +35,7 @@ const getTheMessage = function (auth) {
     request(options, function (error, response, body) {
       if (error) return reject(error)
       if (typeof body === 'string') body = JSON.parse(body)
-      if (body.status !== "OK") return reject(body.message)
+      if (body.status !== 'OK') return reject(body.message)
 
       let opts = {auth, communication: body}
       resolve(opts)
@@ -65,7 +65,7 @@ const sendAnswer = function ({ auth, communication }) {
 
     request(options, function (error, response, body) {
       if (error) return reject(error)
-      if (body.status !== "OK") return reject(body.message)
+      if (body.status !== 'OK') return reject(body.message)
 
       console.log('-', body.message, '\n')
     })
