@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "./node_modules/tape/bin/tape ./test/*.js | tap-spec"
+    "test": "npm run test:style && npm run test:suite",
+    "test:suite": "./node_modules/tape/bin/tape ./test/*.js | tap-spec",
+    "test:style": "node_modules/standard/bin/cmd.js"
   },
   "author": "emilioriosvz",
   "license": "MIT",

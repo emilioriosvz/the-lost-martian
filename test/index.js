@@ -4,14 +4,14 @@ const test = require('tape')
 const { authenticate, getTheMessage, sendAnswer } = require('../lib/communicator')
 
 const setup = () => {
-  const fixtures = {};
+  const fixtures = {}
   fixtures.credentials = {
     username: 'candidate',
     password: 'try'
   }
 
   return fixtures
-};
+}
 
 test('Check the authentication', (assert) => {
   const credentials = setup().credentials
