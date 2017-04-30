@@ -21,3 +21,8 @@ Run:
 ```js
 npm start
 ```
+
+Test:
+```js
+npm test
+```
